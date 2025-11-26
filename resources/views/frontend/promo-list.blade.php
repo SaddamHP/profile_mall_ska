@@ -61,33 +61,6 @@
         z-index: 1;
     }
 
-    /* === BACK BUTTON === */
-    .back-button {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        text-decoration: none;
-        color: #667eea;
-        font-size: 1.5rem;
-    }
-
-    .back-button:hover {
-        transform: translateX(-5px) scale(1.1);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        color: #764ba2;
-    }
-
     /* === FILTER SECTION === */
     .filter-section {
         background: white;
@@ -399,11 +372,6 @@
     }
 </style>
 
-{{-- BACK BUTTON --}}
-<a href="{{ url('/') }}" class="back-button" title="Back to Home">
-    <i class="bi bi-arrow-left"></i>
-</a>
-
 {{-- HERO SECTION --}}
 <section class="promo-hero">
     <div class="container text-center">
@@ -645,7 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // === OPEN PROMO DETAIL ===
-    window.openPromoDetail = function(id, status, startFormatted, endFormatted, description, imageUrl) {
+    window.openPromoDetail = function(name, status, startFormatted, endFormatted, description, imageUrl) {
         const html = `
             <div class="row">
                 <div class="col-md-5 mb-3 text-center">
@@ -656,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
 
                 <div class="col-md-7">
-                    <h4 class="mb-3">${status}</h4>
+                    <span class="badge bg-primary mb-3">${status}</span>
 
                     <p><strong>Mulai:</strong> ${startFormatted}</p>
                     <p><strong>Berakhir:</strong> ${endFormatted}</p>

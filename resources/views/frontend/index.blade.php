@@ -239,6 +239,18 @@
         margin-top: 20px;
     }
 
+    .tenant-badge {
+        display: inline-block;
+        padding: 5px 15px;
+        background: var(--primary-gradient);
+        color: white;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+
     .btn-primary {
         background: var(--primary-gradient);
         border: none;
@@ -964,6 +976,9 @@
                             <div>
                                 <h5 class="mt-3">{{ $t->nama_tenant }}</h5>
                                 <p class="text-muted mb-1">
+                                    <strong class="tenant-badge">{{ $t->category->nama_category ?? '-' }}</strong>
+                                </p>
+                                <p class="text-muted mb-2">
                                     <i class="bi bi-geo-fill"></i> 
                                     <strong>Lantai {{ $t->floor->lantai ?? '-' }}</strong>
                                 </p>

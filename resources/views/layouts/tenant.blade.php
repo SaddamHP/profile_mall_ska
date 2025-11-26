@@ -100,7 +100,7 @@
         transition: all 0.3s ease;
         z-index: 1000;
         text-decoration: none;
-        color: #667eea;
+        color: whitesmoke;
         font-size: 1.3rem;
     }
 

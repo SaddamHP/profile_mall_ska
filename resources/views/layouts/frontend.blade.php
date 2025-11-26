@@ -7,7 +7,10 @@
     <title>MAL SKA | @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -17,6 +20,10 @@
         /* === SMOOTH SCROLL === */
         html {
             scroll-behavior: smooth;
+        }
+
+        * {
+            font-family: "Poppins", sans-serif;
         }
 
         /* === NAVBAR === */
@@ -65,12 +72,12 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background: var(--primary-gradient);
+            background: #a2b1f1;
             transition: width 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #a2b1f1 !important;
+            color: var(--primary-gradient) !important;
             background: rgba(102, 126, 234, 0.1);
         }
 
@@ -154,7 +161,7 @@
 
         .footer-link i {
             margin-right: 8px;
-            color: #667eea;
+            color: #a2b1f1;
         }
 
         /* === SOCIAL ICONS === */
@@ -207,7 +214,6 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(102, 126, 234, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -224,6 +230,10 @@
             color: #cbd5e0;
             text-decoration: none;
             transition: color 0.3s ease;
+        }
+
+        .contact-content small {
+            font-weight: 800;
         }
 
         .contact-content a:hover {
@@ -427,7 +437,7 @@
                                     <i class="bi bi-geo-alt-fill"></i>
                                 </div>
                                 <div class="contact-content">
-                                    <small class="d-block text-muted mb-1">Alamat</small>
+                                    <small class="d-block mb-1">Alamat</small>
                                     {{ $c->alamat }}
                                 </div>
                             </div>
@@ -437,7 +447,7 @@
                                     <i class="bi bi-telephone-fill"></i>
                                 </div>
                                 <div class="contact-content">
-                                    <small class="d-block text-muted mb-1">Telepon</small>
+                                    <small class="d-block mb-1">Telepon</small>
                                     <a href="tel:{{ $c->telepon }}">{{ $c->telepon }}</a>
                                 </div>
                             </div>
@@ -447,7 +457,7 @@
                                     <i class="bi bi-envelope-fill"></i>
                                 </div>
                                 <div class="contact-content">
-                                    <small class="d-block text-muted mb-1">Email</small>
+                                    <small class="d-block mb-1">Email</small>
                                     <a href="mailto:{{ $c->email }}">{{ $c->email }}</a>
                                 </div>
                             </div>
