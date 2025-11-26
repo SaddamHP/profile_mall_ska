@@ -11,7 +11,7 @@
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --text-dark: #2d3748;
+            --text-light: #d8dbe2;
         }
 
         /* === SMOOTH SCROLL === */
@@ -21,9 +21,9 @@
 
         /* === NAVBAR === */
         .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
+            background: var(--primary-gradient) !important;
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(255, 255, 255);
             padding: 15px 0;
             transition: all 0.3s ease;
         }
@@ -48,7 +48,7 @@
         }
 
         .nav-link {
-            color: var(--text-dark) !important;
+            color: var(--text-light) !important;
             font-weight: 600;
             margin: 0 10px;
             padding: 8px 16px !important;
@@ -70,7 +70,7 @@
         }
 
         .nav-link:hover {
-            color: #667eea !important;
+            color: #a2b1f1 !important;
             background: rgba(102, 126, 234, 0.1);
         }
 
@@ -93,7 +93,7 @@
 
         /* === FOOTER === */
         footer {
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            background: var(--primary-gradient);
             color: #e2e8f0;
             position: relative;
             overflow: hidden;
@@ -129,7 +129,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: var(--primary-gradient);
+            background: #a2b1f1;
             border-radius: 2px;
         }
 
@@ -211,7 +211,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #667eea;
+            color: #a2b1f1;
             font-size: 1.1rem;
             flex-shrink: 0;
         }
