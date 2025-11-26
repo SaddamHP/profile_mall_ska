@@ -61,33 +61,6 @@
         z-index: 1;
     }
 
-    /* === BACK BUTTON === */
-    .back-button {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        text-decoration: none;
-        color: #667eea;
-        font-size: 1.5rem;
-    }
-
-    .back-button:hover {
-        transform: translateX(-5px) scale(1.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        color: #764ba2;
-    }
-
     /* === FILTER SECTION === */
     .filter-section {
         background: white;
@@ -409,11 +382,6 @@
         }
     }
 </style>
-
-{{-- BACK BUTTON --}}
-<a href="{{ url('/') }}" class="back-button" title="Back to Home">
-    <i class="bi bi-arrow-left"></i>
-</a>
 
 {{-- HERO SECTION --}}
 <section class="event-hero">
