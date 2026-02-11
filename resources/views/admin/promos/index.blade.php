@@ -22,7 +22,7 @@
     <tbody>
         @foreach ($promos as $p)
             <tr>
-                <td>{{ $p->id_promo }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $p->tenant->nama_tenant ?? '-' }}</td>
                 <td>{{ $p->nama_promo }}</td>
                 <td>{{ $p->tanggal_mulai }}</td>

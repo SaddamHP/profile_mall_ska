@@ -21,7 +21,7 @@
     <tbody>
         @foreach ($facilities as $f)
             <tr>
-                <td>{{ $f->id_facility }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $f->nama_facility }}</td>
                 <td>{{ $f->floor->lantai }}</td>
                 <td>{{ Str::limit($f->deskripsi, 60) }}</td>

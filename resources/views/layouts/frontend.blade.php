@@ -41,17 +41,34 @@
         }
 
         .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             transition: all 0.3s ease;
         }
 
         .navbar-brand:hover {
             transform: scale(1.05);
+        }
+
+        .navbar-logo {
+            height: 45px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-logo {
+            height: 40px;
+        }
+
+        .navbar-brand-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: none; /* Hide text, show only logo */
         }
 
         .nav-link {
@@ -322,7 +339,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                MAL SKA
+                <img src="{{ Storage::url('images/logo.png') }}" alt="MAL SKA Logo" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -458,7 +475,7 @@
                                 </div>
                                 <div class="contact-content">
                                     <small class="d-block mb-1">Email</small>
-                                    <a href="mailto:{{ $c->email }}">{{ $c->email }}</a>
+                                    <a href="/cdn-cgi/l/email-protection#7308085357105e4d161e121a1f530e0e">{{ $c->email }}</a>
                                 </div>
                             </div>
                         @endforeach

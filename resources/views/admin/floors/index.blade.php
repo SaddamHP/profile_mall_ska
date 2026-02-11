@@ -18,7 +18,7 @@
     <tbody>
         @foreach ($floors as $f)
             <tr>
-                <td>{{ $f->id_floor }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $f->lantai }}</td>
                 <td>
                     <a href="{{ route('floors.edit',$f->id_floor) }}" class="btn btn-warning btn-sm">

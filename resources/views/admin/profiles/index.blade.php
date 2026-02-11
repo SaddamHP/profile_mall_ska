@@ -21,7 +21,7 @@
   <tbody>
     @foreach ($profiles as $p )
       <tr>
-        <td>{{ $p->id_profile }}</td>
+        <td>{{ $loop->iteration }}</td>
         <td>{{ $p->nama_mall }}</td>
         <td>{{ Str::limit($p->deskripsi, 60) }}</td>
         <td>

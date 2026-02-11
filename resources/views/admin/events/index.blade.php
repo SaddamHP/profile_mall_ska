@@ -22,7 +22,7 @@
     <tbody>
         @foreach ($events as $e)
             <tr>
-                <td>{{ $e->id_event }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $e->nama_event }}</td>
                 <td>{{ $e->floor->lantai ?? '-' }}</td>
                 <td>{{ $e->tanggal_mulai }}</td>

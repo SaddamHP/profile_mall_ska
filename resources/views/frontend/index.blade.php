@@ -14,9 +14,10 @@
     /* === HERO SECTION === */
     .hero-section {
         background-image: url('https://salsawisata.com/wp-content/uploads/2022/09/Syarat-masuk-Mall-SKA-Pekanbaru.jpg');
-        padding: 140px 0 120px;
-        position: relative;
-        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -33,7 +34,7 @@
         opacity: 0.3;
     }
 
-    .hero-section::after {
+    /* .hero-section::after {
         content: '';
         position: absolute;
         bottom: -2px;
@@ -42,7 +43,7 @@
         height: 100px;
         background: white;
         clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
-    }
+    } */
 
     .hero-text h1 {
         font-size: clamp(2rem, 5vw, 3.5rem);
@@ -879,17 +880,6 @@
             <div class="col-lg-6 hero-text">
                 <h1>Wonderful Mall SKA</h1>
                 <p>Experience unforgettable moments with your family in our wonderful mall</p>
-                <div class="d-flex flex-wrap social-badges">
-                    <a href="#" class="app-badge">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="#" class="app-badge">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="#" class="app-badge">
-                        <i class="bi bi-tiktok"></i>
-                    </a>
-                </div>
             </div>
             <div class="col-lg-6 text-center pt-4">
                 @foreach ($profiles as $p)
@@ -1231,6 +1221,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // === COUNTDOWN SYSTEM ===
+    // Storage untuk menyimpan interval setiap countdown
+    const countdownIntervals = {};
+
     function startCountdown(elementId, startStr, endStr) {
         const el = document.getElementById(elementId);
 
@@ -1297,15 +1290,18 @@ document.addEventListener("DOMContentLoaded", () => {
             // ENDED
             if (now >= endMs) {
                 el.innerHTML = `<span class='fw-bold'>✅ Ended</span>`;
-                if (typeof interval !== 'undefined') {
-                    clearInterval(interval);
+                // Clear interval yang spesifik untuk element ini
+                if (countdownIntervals[elementId]) {
+                    clearInterval(countdownIntervals[elementId]);
+                    delete countdownIntervals[elementId];
                 }
                 return;
             }
         }
 
         update();
-        const interval = setInterval(update, 1000);
+        // Simpan interval dengan key elementId
+        countdownIntervals[elementId] = setInterval(update, 1000);
     }
 
     // PROMO COUNTDOWN
@@ -1388,6 +1384,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // === EVENT COUNTDOWN ===
+    // Storage untuk menyimpan interval setiap event countdown
+    const eventCountdownIntervals = {};
+
     function startEventCountdown(elementId, startStr, endStr) {
         const el = document.getElementById(elementId);
 
@@ -1452,13 +1451,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // ENDED
             el.innerHTML = `<span style="font-weight: 700;">Event Berakhir</span>`;
-            if (typeof interval !== 'undefined') {
-                clearInterval(interval);
+            // Clear interval yang spesifik untuk element ini
+            if (eventCountdownIntervals[elementId]) {
+                clearInterval(eventCountdownIntervals[elementId]);
+                delete eventCountdownIntervals[elementId];
             }
         }
 
         update();
-        const interval = setInterval(update, 1000);
+        // Simpan interval dengan key elementId
+        eventCountdownIntervals[elementId] = setInterval(update, 1000);
     }
 
     document.querySelectorAll('[id^="countdown-event-"]').forEach(el => {

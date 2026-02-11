@@ -200,7 +200,7 @@
         <div class="container">
             {{-- LOGO BRAND --}}
             <a href="#" class="navbar-brand">
-                <img src="{{ asset('images/logo.png') }}" 
+                <img src="storage/app/public/logo.png" 
                      alt="Mall SKA Logo" 
                      class="brand-logo"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">

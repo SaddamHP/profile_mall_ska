@@ -21,7 +21,7 @@
     <tbody>
         @foreach ($contacts as $c)
             <tr>
-                <td>{{ $c->id_contact }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $c->profile->nama_mall ?? '-' }}</td>
                 <td>{{ $c->alamat }}</td>
                 <td>{{ $c->telepon }}</td>

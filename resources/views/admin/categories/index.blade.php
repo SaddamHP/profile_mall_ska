@@ -17,7 +17,7 @@
     <tbody>
         @foreach ($categories as $c)
             <tr>
-                <td>{{ $c->id_category }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $c->nama_category }}</td>
                 <td>{{ Str::limit($c->deskripsi, 70) }}</td>
                 <td>

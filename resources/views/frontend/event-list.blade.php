@@ -544,6 +544,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // === COUNTDOWN SYSTEM ===
+    // Storage untuk menyimpan interval setiap countdown
+    const countdownIntervals = {};
+
     function startCountdown(elementId, startStr, endStr) {
         const el = document.getElementById(elementId);
         if (!el) return;
@@ -604,13 +607,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // ENDED
             el.innerHTML = `<span style="font-weight: 700;">Event Berakhir</span>`;
-            if (typeof interval !== 'undefined') {
-                clearInterval(interval);
+            // Clear interval yang spesifik untuk element ini
+            if (countdownIntervals[elementId]) {
+                clearInterval(countdownIntervals[elementId]);
+                delete countdownIntervals[elementId];
             }
         }
 
         update();
-        const interval = setInterval(update, 1000);
+        // Simpan interval dengan key elementId
+        countdownIntervals[elementId] = setInterval(update, 1000);
     }
 
     // Initialize all countdowns
